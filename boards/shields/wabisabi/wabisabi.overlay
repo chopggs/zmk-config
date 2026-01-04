@@ -1,26 +1,13 @@
 // This file was generated from a template. Edit it to match your keyboard.
-// See https://docs.zephyrproject.org/3.5.0/hardware/porting/board_porting.html
-// and https://zmk.dev/docs/development/hardware-integration/new-shield for more
+// See https://zmk.dev/docs/development/hardware-integration/new-shield for more
 // instructions.
 
-/dts-v1/;
-#include <nordic/nrf52840_qiaa.dtsi>
 #include <dt-bindings/zmk/matrix_transform.h>
 
-#include "wabisabi-pinctrl.dtsi"
 #include "wabisabi-layouts.dtsi"
 
 / {
-    model = "wabisabi";
-    compatible = "wabisabi";
-
     chosen {
-        zephyr,code-partition = &code_partition;
-        zephyr,console = &cdc_acm_uart;
-        zephyr,sram = &sram0;
-        zephyr,flash = &flash0;
-        // Uncomment this if you enabled one of the "vddh" nodes below.
-        // zmk,battery = &vbatt;
         zmk,physical-layout = &default_layout;
     };
 
@@ -76,6 +63,4 @@
             RC(1, 0) RC(1, 1) RC(4, 2) RC(4, 5) RC(4, 9) RC(4, 10) RC(4, 11)
         >;
     };
-
-
-
+};

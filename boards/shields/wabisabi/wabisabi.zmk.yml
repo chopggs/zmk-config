@@ -4,9 +4,8 @@
 
 file_format: "1"
 id: wabisabi
-name: wabisabi
-type: board
-arch: arm
+name: WabiSabi
+type: shield
 
 # Set this to a URL that documents the keyboard.
 url: https://example.com
@@ -16,6 +15,5 @@ url: https://example.com
 features:
   - keys
   - studio  # Remove this line if your keyboard will not support ZMK Studio
-outputs:
-  - usb
-  - ble
+requires:
+  - pro_micro

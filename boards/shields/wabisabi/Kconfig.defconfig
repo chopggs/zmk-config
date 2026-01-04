@@ -1,0 +1,6 @@
+if SHIELD_WABISABI
+
+config ZMK_KEYBOARD_NAME
+    default "WabiSabi"
+
+endif # SHIELD_WABISABI
