@@ -23,7 +23,26 @@
                 &kp LSHIFT &kp Z &kp X &kp C &kp V &kp B &kp N &kp M &kp COMMA &kp DOT &kp RSHIFT
 
                 /* Row 4 */
-                &kp LCTRL &kp LGUI &kp LALT &kp SPACE &kp RALT &kp RGUI &kp RCTRL
+                &kp LCTRL &kp LGUI &kp LALT &kp SPACE &kp RALT &kp &mo 1 &kp RCTRL
+            >;
+        };
+
+        fn_layer {
+            bindings = <
+                /* Row 0 */
+                &kp &bootloader &kp F1 &kp F2 &kp F3 &kp F4 &kp F5 &kp F6 &kp F7 &kp F8 &kp F9 &kp F10 &kp F11
+
+                /* Row 1 */
+                &kp &none   &kp &none &kp &none &kp &none &kp &none &kp &none &kp &none &kp &none &kp &none &kp &none &kp &none &kp &none
+
+                /* Row 2 */
+                &kp &none  &kp &none &kp &none &kp &none &kp &none &kp &none &kp &none &kp &none &kp &none &kp &none &kp &none
+
+                /* Row 3 */
+                &kp &none &kp &none &kp &none &kp &none &kp &none &kp &none &kp &none &kp &none &kp &none &kp &none &kp &none
+
+                /* Row 4 */
+                &kp &none &kp &none &kp &none &kp &none &kp &none &kp &mo 1 &kp &none
             >;
         };
     };
