@@ -30,19 +30,19 @@
         fn_layer {
             bindings = <
                 /* Row 0 */
-                &kp &bootloader &kp F1 &kp F2 &kp F3 &kp F4 &kp F5 &kp F6 &kp F7 &kp F8 &kp F9 &kp F10 &kp F11
+                &bootloader &kp F1 &kp F2 &kp F3 &kp F4 &kp F5 &kp F6 &kp F7 &kp F8 &kp F9 &kp F10 &kp F11
 
                 /* Row 1 */
-                &kp &none   &kp &none &kp &none &kp &none &kp &none &kp &none &kp &none &kp &none &kp &none &kp &none &kp &none &kp &none
+                &none   &none &none &none &none &none &none &none &none &none &none &none
 
                 /* Row 2 */
-                &kp &none  &kp &none &kp &none &kp &none &kp &none &kp &none &kp &none &kp &none &kp &none &kp &none &kp &none
+                &none  &none &none &none &none &none &none &none &none &none &none
 
                 /* Row 3 */
-                &kp &none &kp &none &kp &none &kp &none &kp &none &kp &none &kp &none &kp &none &kp &none &kp &none &kp &none
+                &none &none &none &none &none &none &none &none &none &none &none
 
                 /* Row 4 */
-                &kp &none &kp &none &kp &none &kp &none &kp &none &kp &mo 1 &kp &none
+                &none &none &none &none &none &trans &none
             >;
         };
     };
