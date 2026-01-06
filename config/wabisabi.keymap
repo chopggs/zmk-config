@@ -25,6 +25,13 @@
             quick-tap-ms = <1000>; 
             bindings = <&mo>, <&kp>;
         };
+        
+        esc_tilde: esc_tilde {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp ESC>, <&kp TILDE>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };        
     };
 
     keymap {
@@ -33,7 +40,7 @@
         default_layer {
             bindings = <
                 /* Row 0 */
-                &kp ESC   &kp N1 &kp N2 &kp N3 &kp N4 &kp N5 &kp N6 &kp N7 &kp N8 &kp N9 &kp N0 &kp DEL
+                &esc_tilde   &kp N1 &kp N2 &kp N3 &kp N4 &kp N5 &kp N6 &kp N7 &kp N8 &kp N9 &kp N0 &kp DEL
 
                 /* Row 1 */
                 &kp TAB   &kp Q &kp W &kp E &kp R &kp T &kp Y &kp U &kp I &kp O &kp P &kp BSPC
