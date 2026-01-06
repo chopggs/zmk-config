@@ -5,14 +5,25 @@
 #include <dt-bindings/zmk/keys.h>
 
 / {
-        behaviors {
-        my_lt_quick: layer_tap_quick {
+    behaviors {
+        // For Shift, Alt, and Control
+        tp_kp: tap_preferred_kp {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
-            flavor = "tap-preferred";      // typical for layer-tap
-            tapping-term-ms = <200>;       // how long to wait before hold
-            quick-tap-ms = <150>;          // quick-tap window
-            bindings = <&mt>, <&kp>;       // hold = layer, tap = keycode
+            flavor = "hold-preferred";
+            tapping-term-ms = <200>;
+            quick-tap-ms = <200>; 
+            bindings = <&kp>, <&kp>;
+        };
+
+        // For Layer Taps (Hold for Layer, Tap for Key)
+        tp_lyr: tap_preferred_layer {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "hold-preferred";
+            tapping-term-ms = <200>;
+            quick-tap-ms = <200>; 
+            bindings = <&mo>, <&kp>; // First param is Layer, second is Key
         };
     };
 
@@ -31,10 +42,10 @@
                 &kp CAPS  &kp A &kp S &kp D &kp F &kp G &kp H &kp J &kp K &kp L &kp ENTER
 
                 /* Row 3 */
-                &kp LSHIFT &kp Z &kp X &kp C &kp V &kp B &kp N &kp M &kp COMMA &kp DOT &mt RSHIFT UP
+                &kp LSHIFT &kp Z &kp X &kp C &kp V &kp B &kp N &kp M &kp COMMA &kp DOT &tp_kp RSHIFT UP
 
                 /* Row 4 */
-                &mt LCTRL C_NEXT &kp LGUI &mt LALT C_PLAY_PAUSE &kp SPACE &mt RCTRL LEFT &lt 1 DOWN &mt RCTRL RIGHT
+                &mt LCTRL C_NEXT &kp LGUI &mt LALT C_PLAY_PAUSE &kp SPACE &tp_kp RALT LEFT &tp_lyr 1 DOWN &tp_kp RCTRL RIGHT
             >;
         };
 
