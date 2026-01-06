@@ -39,7 +39,7 @@
             #binding-cells = <0>;
             bindings = <&kp BSPC>, <&kp BSLH>;
             // This triggers the morph if Left Alt, Right Alt, Left Shift, or Right Shift is held
-            mods = <(MOD_LALT|MOD_RALT|MOD_LSFT|MOD_RSFT)>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
         };        
     };
 
