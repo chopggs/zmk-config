@@ -37,7 +37,7 @@
             compatible = "zmk,behavior-tap-dance";
             label = "TAP_DANCE_VOL_DOWN";
             #binding-cells = <0>;
-            tapping-term-ms = <50>;
+            tapping-term-ms = <100>;
             bindings = <&kp N9>, <&kp C_VOL_DN>;
         };
 
@@ -45,7 +45,7 @@
             compatible = "zmk,behavior-tap-dance";
             label = "TAP_DANCE_VOL_UP";
             #binding-cells = <0>;
-            tapping-term-ms = <50>;
+            tapping-term-ms = <100>;
             bindings = <&kp N0>, <&kp C_VOL_UP>;
         };        
     };
