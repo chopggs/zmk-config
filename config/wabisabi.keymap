@@ -6,24 +6,24 @@
 
 / {
     behaviors {
-        // For Shift, Alt, and Control
+        // High quick-tap window for modifiers
         tp_kp: tap_preferred_kp {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = "hold-preferred";
             tapping-term-ms = <200>;
-            quick-tap-ms = <200>; 
+            quick-tap-ms = <1000>; // Tapping once gives you 1 second to hold it for 'Up'
             bindings = <&kp>, <&kp>;
         };
 
-        // For Layer Taps (Hold for Layer, Tap for Key)
+        // High quick-tap window for Layer
         tp_lyr: tap_preferred_layer {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = "hold-preferred";
             tapping-term-ms = <200>;
-            quick-tap-ms = <200>; 
-            bindings = <&mo>, <&kp>; // First param is Layer, second is Key
+            quick-tap-ms = <1000>; 
+            bindings = <&mo>, <&kp>;
         };
     };
 
