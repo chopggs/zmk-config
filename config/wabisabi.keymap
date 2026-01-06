@@ -16,7 +16,6 @@
             flavor = "balanced";
         };
     };
-
     keymap {
         compatible = "zmk,keymap";
 
@@ -32,10 +31,10 @@
                 &kp CAPS  &kp A &kp S &kp D &kp F &kp G &kp H &kp J &kp K &kp L &kp ENTER
 
                 /* Row 3 */
-                &kp LSHIFT &kp Z &kp X &kp C &kp V &kp B &kp N &kp M &kp COMMA &kp DOT &mt_qt RSHIFT UP
+                &kp LSHIFT &kp Z &kp X &kp C &kp V &kp B &kp N &kp M &kp COMMA &kp DOT &mt RSHIFT UP
 
                 /* Row 4 */
-                &mt_qt LCTRL C_NEXT &kp LGUI &mt_qt LALT C_PLAY_PAUSE &kp SPACE &mt_qt RCTRL LEFT &lt 1 DOWN &mt_qt RCTRL RIGHT
+                &mt LCTRL C_NEXT &kp LGUI &mt LALT C_PLAY_PAUSE &kp SPACE &mt RCTRL LEFT &lt 1 DOWN &mt RCTRL RIGHT
             >;
         };
 
