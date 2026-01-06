@@ -39,7 +39,7 @@
                 &none  &none &none &none &none &none &none &none &kp SQT &kp SEMI &none
 
                 /* Row 3 */
-                &kp LSHIFT &none &none &none &none &none &none &none &none &none &kp RSHIFT
+                &kp LSHIFT &none &none &none &none &none &none &none &none &SLASH &kp RSHIFT
 
                 /* Row 4 */
                 &none &none &none &none &none &trans &none
