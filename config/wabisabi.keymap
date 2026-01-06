@@ -1,6 +1,4 @@
-// This file was generated from a template. Edit it to match your keyboard.
-// See https://zmk.dev/docs/development/hardware-integration/new-shield for more instructions.
-
+// This file was modified to add Volume Up/Down on ESC + 1/2
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
 
@@ -12,7 +10,7 @@
             #binding-cells = <2>;
             flavor = "hold-preferred";
             tapping-term-ms = <200>;
-            quick-tap-ms = <1000>; // Tapping once gives you 1 second to hold it for 'Up'
+            quick-tap-ms = <1000>; 
             bindings = <&kp>, <&kp>;
         };
 
@@ -33,13 +31,13 @@
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
-        esc_poly: esc_layer_tap {
+        // NEW BEHAVIOR: Layer-tap that triggers esc_tilde on tap, or layer 2 on hold
+        esc_media: esc_media {
             compatible = "zmk,behavior-hold-tap";
-            label = "ESC_LAYER_TAP";
             #binding-cells = <2>;
-            flavor = "tap-preferred";
+            flavor = "hold-preferred";
             tapping-term-ms = <200>;
-            bindings = <&mo>, <&esc_tilde>; // Hold: Layer, Tap: Morph
+            bindings = <&mo>, <&esc_tilde>;
         };
 
         bspc_morph: bspc_morph {
@@ -47,7 +45,6 @@
             label = "BSPC_MORPH";
             #binding-cells = <0>;
             bindings = <&kp BSPC>, <&kp BSLH>;
-            // This triggers the morph if Left Alt, Right Alt, Left Shift, or Right Shift is held
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };        
     };
@@ -58,7 +55,7 @@
         default_layer {
             bindings = <
                 /* Row 0 */
-                &esc_poly 3 0   &kp N1 &kp N2 &kp N3 &kp N4 &kp N5 &kp N6 &kp N7 &kp N8 &kp N9 &kp N0 &kp DEL
+                &esc_media 2 0  &kp N1 &kp N2 &kp N3 &kp N4 &kp N5 &kp N6 &kp N7 &kp N8 &kp N9 &kp N0 &kp DEL
 
                 /* Row 1 */
                 &kp TAB   &kp Q &kp W &kp E &kp R &kp T &kp Y &kp U &kp I &kp O &kp P &bspc_morph
@@ -93,22 +90,17 @@
             >;
         };
 
-        layer_3 {
+        // NEW LAYER: Activated by holding ESC
+        media_layer {
             bindings = <
                 /* Row 0 */
-                &none &kp C_VOL_UP &kp NC_VOL_DN &kp N3 &kp N4 &kp N5 &kp N6 &kp N7 &kp N8 &kp N9 &kp N0 &kp DEL
+                &trans &kp C_VOL_DN &kp C_VOL_UP &trans &trans &trans &trans &trans &trans &trans &trans &trans
 
-                /* Row 1 */
-                &kp TAB   &kp Q &kp W &kp E &kp R &kp T &kp Y &kp U &kp I &kp O &kp P &bspc_morph
-
-                /* Row 2 */
-                &kp CAPS  &kp A &kp S &kp D &kp F &kp G &kp H &kp J &kp K &kp L &kp ENTER
-
-                /* Row 3 */
-                &kp LSHIFT &kp Z &kp X &kp C &kp V &kp B &kp N &kp M &kp COMMA &kp DOT &tp_kp RSHIFT UP
-
-                /* Row 4 */
-                &mt LCTRL C_NEXT &kp LGUI &mt LALT C_PLAY_PAUSE &kp SPACE &tp_kp RALT LEFT &tp_lyr 1 DOWN &tp_kp RCTRL RIGHT
+                /* Row 1-4 are transparent so other keys work normally while holding ESC */
+                &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
+                &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans 
+                &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
+                &trans &trans &trans &trans &trans &trans &trans
             >;
         };
     };
