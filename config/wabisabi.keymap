@@ -33,6 +33,15 @@
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
+        esc_poly: esc_layer_tap {
+            compatible = "zmk,behavior-hold-tap";
+            label = "ESC_LAYER_TAP";
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <200>;
+            bindings = <&mo>, <&esc_tilde>; // Hold: Layer, Tap: Morph
+        };
+
         bspc_morph: bspc_morph {
             compatible = "zmk,behavior-mod-morph";
             label = "BSPC_MORPH";
@@ -49,7 +58,7 @@
         default_layer {
             bindings = <
                 /* Row 0 */
-                &esc_tilde   &kp N1 &kp N2 &kp N3 &kp N4 &kp N5 &kp N6 &kp N7 &kp N8 &kp N9 &kp N0 &kp DEL
+                &esc_poly 3 0   &kp N1 &kp N2 &kp N3 &kp N4 &kp N5 &kp N6 &kp N7 &kp N8 &kp N9 &kp N0 &kp DEL
 
                 /* Row 1 */
                 &kp TAB   &kp Q &kp W &kp E &kp R &kp T &kp Y &kp U &kp I &kp O &kp P &bspc_morph
@@ -81,6 +90,25 @@
 
                 /* Row 4 */
                 &none &none &none &none &none &trans &none
+            >;
+        };
+
+        layer_3 {
+            bindings = <
+                /* Row 0 */
+                &none &kp C_VOL_UP &kp NC_VOL_DN &kp N3 &kp N4 &kp N5 &kp N6 &kp N7 &kp N8 &kp N9 &kp N0 &kp DEL
+
+                /* Row 1 */
+                &kp TAB   &kp Q &kp W &kp E &kp R &kp T &kp Y &kp U &kp I &kp O &kp P &bspc_morph
+
+                /* Row 2 */
+                &kp CAPS  &kp A &kp S &kp D &kp F &kp G &kp H &kp J &kp K &kp L &kp ENTER
+
+                /* Row 3 */
+                &kp LSHIFT &kp Z &kp X &kp C &kp V &kp B &kp N &kp M &kp COMMA &kp DOT &tp_kp RSHIFT UP
+
+                /* Row 4 */
+                &mt LCTRL C_NEXT &kp LGUI &mt LALT C_PLAY_PAUSE &kp SPACE &tp_kp RALT LEFT &tp_lyr 1 DOWN &tp_kp RCTRL RIGHT
             >;
         };
     };
