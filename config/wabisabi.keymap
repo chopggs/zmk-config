@@ -12,7 +12,7 @@
             flavor = "tap-preferred";      // typical for layer-tap
             tapping-term-ms = <200>;       // how long to wait before hold
             quick-tap-ms = <150>;          // quick-tap window
-            bindings = <&mo>, <&kp>;       // hold = layer, tap = keycode
+            bindings = <&mt>, <&kp>;       // hold = layer, tap = keycode
         };
     };
 
